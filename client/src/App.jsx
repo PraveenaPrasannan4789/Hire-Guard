@@ -1,19 +1,11 @@
-import { useEffect, useState } from "react";
+
+import JobList from './components/JobList';
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:5000") // backend route
-      .then(res => res.text())
-      .then(data => setMessage(data))
-      .catch(err => console.error(err));
-  }, []);
-
   return (
     <div>
-      <h1>Backend says:</h1>
-      <p>{message}</p>
+      <h1>My Job list</h1>
+      <JobList/>
     </div>
   );
 }
