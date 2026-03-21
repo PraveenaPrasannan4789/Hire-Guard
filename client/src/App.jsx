@@ -1,5 +1,5 @@
 
-import JobList from './components/JobList';
+import JobList from './components/jobs/JobList';
 
 function App() {
   return (
