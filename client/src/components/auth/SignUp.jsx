@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signup = ({ onSignup }) => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [errors, setErrors] = useState({});
+  const navigate= useNavigate();
 
   const handleSubmit = (e) => {
     let validationErrors = {};
@@ -26,6 +28,7 @@ const Signup = ({ onSignup }) => {
     }
 
     onSignup(form);
+    navigate('/');
   };
 
   const handleChange = (e) => {
@@ -36,20 +39,20 @@ const Signup = ({ onSignup }) => {
     <form onSubmit={handleSubmit}>
       <div>
         <label>Name</label>
-        <input type="text" value={form.name} onChange={handleChange} />
+        <input type="text" name="name" value={form.name} onChange={handleChange} />
         {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
       </div>
       <div>
         <label>Email</label>
-        <input type="text" value={form.email} onChange={handleChange} />
-        {errors.name && <p style={{ color: "red" }}>{errors.email}</p>}
+        <input type="text" name="email" value={form.email} onChange={handleChange} />
+        {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
       </div>
       <div>
         <label>Password</label>
-        <input type="text" value={form.password} onChange={handleChange} />
-        {errors.name && <p style={{ color: "red" }}>{errors.password}</p>}
+        <input type="password" name="password" value={form.password} onChange={handleChange} />
+        {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
       </div>
-      <button type="submit"></button>
+      <button type="submit">SignUp</button>
     </form>
   );
 };

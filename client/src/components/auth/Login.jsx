@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { Link ,useNavigate} from "react-router-dom";
 
 const UserLogin = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [validationErrors, setValidationErrors] = useState({});
+  const navigate= useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,10 +23,12 @@ const UserLogin = ({ onLogin }) => {
       setValidationErrors(errors);
       return;
     }
-    onLogin({email,password})
+    onLogin({email,password});
+    navigate("/dashboard");
   };
 
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <div>
         <label>User Email</label>
@@ -52,6 +56,10 @@ const UserLogin = ({ onLogin }) => {
       </div>
       <button type="submit">Login</button>
     </form>
+    <div>
+        <p>Dont have a user account ,click <Link style={{color:"blue"}}to="/signUp">here</Link> for signup</p>
+    </div>
+    </div>
   );
 };
 
