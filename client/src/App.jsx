@@ -3,7 +3,6 @@ import {
   Routes,
   Route,
   Navigate,
-  BrowserRouter,
 } from "react-router-dom";
 import { useState } from "react";
 import UserLogin from "./components/auth/Login";
@@ -26,7 +25,7 @@ setIsUserLoggedIn(false)
 
   return (
     <div>
-      <BrowserRouter>
+      <Router>
         <Routes>
           {/* Redirect to dashboard if already logged in */}
           <Route
@@ -45,7 +44,7 @@ setIsUserLoggedIn(false)
             element={<SignupForm onSignup={onSignup} />}
           ></Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
