@@ -1,5 +1,5 @@
 // controllers/authController.js
-const User = require("../models/User");
+const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -8,7 +8,8 @@ const signup = async (req, res, next) => {
     const { name, email, password } = req.body;
 
     const existingUser = await User.findOne({ email });
-    if (existingUser) return res.status(400).json({ msg: "Email already exists" });
+    if (existingUser)
+      return res.status(400).json({ msg: "Email already exists" });
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -31,7 +32,11 @@ const login = async (req, res, next) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials" });
 
-    const token = jwt.sign({ userId: user._id, role: user.role }, "secret", { expiresIn: "1h" });
+    const token = jwt.sign(
+      { userId: user._id, role: user.role },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" },
+    );
 
     res.json({ token });
   } catch (err) {
@@ -39,4 +44,4 @@ const login = async (req, res, next) => {
   }
 };
 
-module.exports={login,signup}
+module.exports = { login, signup };
