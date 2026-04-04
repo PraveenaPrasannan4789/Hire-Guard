@@ -1,12 +1,23 @@
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
+const mongoose = require('mongoose');
 require('dotenv').config();
+
+const {errorHandler}=require('./utils/errorHandler')
 
 const app = express();
 
 // Middleware
 app.use(cors());
+app.use(helmet());
 app.use(express.json());
+
+mongoose.connect(process.env.MONGO_URI)
+.then(()=>{console.log('Db connected')})
+.catch((err)=>{console.log('error',err)});
+//Error handling middleware
+app.use(errorHandler);
 
 // Test route
 app.get('/', (req, res) => {
