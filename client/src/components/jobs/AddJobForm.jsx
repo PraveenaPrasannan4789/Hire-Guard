@@ -1,7 +1,12 @@
 import { useState } from "react";
 
 const AddJobForm = ({ onAddJob }) => {
-  const [form, setForm] = useState({ title: "", company: "", datePosted: "", status: "" });
+  const [form, setForm] = useState({
+    title: "",
+    company: "",
+    datePosted: "",
+    status: "",
+  });
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -26,7 +31,7 @@ const AddJobForm = ({ onAddJob }) => {
     }
 
     onAddJob(form);
-    setForm({ title: "", company: "", datePosted: "", status: "" });
+    setForm({ title: "", company: "", status: "" });
   };
 
   return (
@@ -43,11 +48,11 @@ const AddJobForm = ({ onAddJob }) => {
         {errors.company && <p style={{ color: "red" }}>{errors.company}</p>}
       </div>
 
-      <div>
+      {/* <div>
         <label>Date Posted:</label>
         <input type="date" name="datePosted" value={form.datePosted} onChange={handleChange} />
         {errors.datePosted && <p style={{ color: "red" }}>{errors.datePosted}</p>}
-      </div>
+      </div> */}
 
       <div>
         <label>Status:</label>

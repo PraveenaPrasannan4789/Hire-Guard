@@ -5,28 +5,19 @@ function JobManager() {
   const [showForm, setShowForm] = useState(false);
   const [jobs, setJobs] = useState([]);
 
-  const addJobFn = (jobName) => {
-    setJobs([...jobs, jobName]);
+  const addJobFn = (newJob) => {
+    setJobs([...jobs, newJob]);
   };
 
   return (
     <div>
-      <h1>Job Manager</h1>
+      <h1>Add a Job </h1>
 
       {/* Add Job button */}
-      {!showForm && (
-        <button onClick={() => setShowForm(true)}>Add Job</button>
-      )}
+      {!showForm && <button onClick={() => setShowForm(true)}>Add Job</button>}
 
       {/* Show form only if showForm is true */}
       {showForm && <AddJobForm addJobFn={addJobFn} />}
-
-      {/* Job List */}
-      <ul>
-        {jobs.map((job, index) => (
-          <li key={index}>{job}</li>
-        ))}
-      </ul>
     </div>
   );
 }

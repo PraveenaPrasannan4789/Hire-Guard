@@ -6,6 +6,8 @@ const Signup = ({ onSignup }) => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const handleSubmit = async (e) => {
     let validationErrors = {};
     e.preventDefault();
@@ -26,16 +28,15 @@ const Signup = ({ onSignup }) => {
       setErrors(validationErrors);
       return;
     }
-
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
+      const res = await fetch(`${API_URL}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ ...form }),
       });
-      const data = res.json();
+      const data = await res.json();
       if (data.success) {
         onSignup(form);
         navigate("/");
@@ -84,9 +85,7 @@ const Signup = ({ onSignup }) => {
         {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
       </div>
       <button type="submit">SignUp</button>
-      {validationErrors.general && (
-        <p style={{ color: "red" }}>{validationErrors.general}</p>
-      )}
+      {errors.general && <p style={{ color: "red" }}>{errors.general}</p>}
     </form>
   );
 };
