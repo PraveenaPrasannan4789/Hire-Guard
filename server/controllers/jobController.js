@@ -49,9 +49,14 @@ const deleteJob = async (req, res, next) => {
       _id: req.params.id,
       userId: req.user.userId,
     });
-    res
-      .status(200)
-      .json({ status: true, message: "successfully deleted", data: deleteOp });
+    if (deleteOp) {
+      res.status(200).json({
+        status: true,
+        message: "successfully deleted",
+        data: deleteOp,
+      });
+    }
+    res.status(400).json({ status: false, message: "unable to delete" });
   } catch (err) {
     next(err);
   }
@@ -71,4 +76,20 @@ const filterJobs = async (req, res, next) => {
   }
 };
 
-module.exports = { addJob, getJob, updateJob, deleteJob, filterJobs };
+const deleteJobByAdmin = async (req, res, next) => {
+  try {
+    const deleteOp = await Job.findOneAndDelete({ _id: req.params.id });
+    res.status(200).json({ message: "deleted successfully", data: deleteOp });
+  } catch (err) {
+    next();
+  }
+};
+
+module.exports = {
+  addJob,
+  getJob,
+  updateJob,
+  deleteJob,
+  filterJobs,
+  deleteJobByAdmin,
+};
