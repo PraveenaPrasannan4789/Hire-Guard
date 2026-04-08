@@ -15,7 +15,7 @@ const signup = async (req, res, next) => {
 
     await User.create({ ...req.body, password: hashedPassword });
 
-    res.status(201).json({ msg: "User created" });
+    res.status(201).json({ success: true, message: "User created" });
   } catch (err) {
     next(err);
   }
@@ -26,10 +26,16 @@ const login = async (req, res, next) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
-    if (!user) return res.status(400).json({ msg: "User not found" });
+    if (!user)
+      return res
+        .status(400)
+        .json({ success: false, message: "User not found" });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ msg: "Invalid credentials" });
+    if (!isMatch)
+      return res
+        .status(400)
+        .json({ success: false, message: "Invalid credentials" });
 
     const token = jwt.sign(
       { userId: user._id, role: user.role },

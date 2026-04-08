@@ -7,6 +7,8 @@ const UserLogin = ({ onLogin }) => {
   const [validationErrors, setValidationErrors] = useState({});
   const navigate = useNavigate();
 
+  const API_URI = import.meta.env.VITE_API_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     let errors = {};
@@ -25,7 +27,7 @@ const UserLogin = ({ onLogin }) => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(`${API_URI}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +35,6 @@ const UserLogin = ({ onLogin }) => {
         body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
-      console.log("res", data);
       if (data.success) {
         localStorage.setItem("token", data.token);
         onLogin({ email, password });

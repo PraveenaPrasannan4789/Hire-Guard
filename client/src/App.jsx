@@ -17,7 +17,7 @@ function App() {
     console.log("Login Data:", data);
   };
   const onSignup = (data) => {
-    console.log("Login Data:", data);
+    console.log("SignUp  Data:", data);
   };
   const handlelogOut = () => {
     console.log("here");
@@ -44,8 +44,7 @@ function App() {
             element={
               isUserLoggedIn ? (
                 <PrivateRoute>
-                  {/* This ensures only users with a valid token can see the
-                  dashboard. */}
+                  {" "}
                   <DashBoard handlelogOut={handlelogOut} />
                 </PrivateRoute>
               ) : (

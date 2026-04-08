@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 const Signup = ({ onSignup }) => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [errors, setErrors] = useState({});
-  const navigate= useNavigate();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const API_URL = import.meta.env.VITE_API_URL;
+
+  const handleSubmit = async (e) => {
     let validationErrors = {};
     e.preventDefault();
     if (!form.name) {
@@ -26,9 +28,24 @@ const Signup = ({ onSignup }) => {
       setErrors(validationErrors);
       return;
     }
-
-    onSignup(form);
-    navigate('/');
+    try {
+      const res = await fetch(`${API_URL}/auth/signup`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...form }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        onSignup(form);
+        navigate("/");
+      } else {
+        setErrors({ general: data.message || "SignUp failed" });
+      }
+    } catch (err) {
+      setErrors({ general: data.message || "Network Error" });
+    }
   };
 
   const handleChange = (e) => {
@@ -39,24 +56,38 @@ const Signup = ({ onSignup }) => {
     <form onSubmit={handleSubmit}>
       <div>
         <label>Name</label>
-        <input type="text" name="name" value={form.name} onChange={handleChange} />
+        <input
+          type="text"
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+        />
         {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
       </div>
       <div>
         <label>Email</label>
-        <input type="text" name="email" value={form.email} onChange={handleChange} />
+        <input
+          type="text"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+        />
         {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
       </div>
       <div>
         <label>Password</label>
-        <input type="password" name="password" value={form.password} onChange={handleChange} />
+        <input
+          type="password"
+          name="password"
+          value={form.password}
+          onChange={handleChange}
+        />
         {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
       </div>
       <button type="submit">SignUp</button>
+      {errors.general && <p style={{ color: "red" }}>{errors.general}</p>}
     </form>
   );
 };
 
 export default Signup;
-
-

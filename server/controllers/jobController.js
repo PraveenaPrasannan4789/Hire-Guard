@@ -23,7 +23,7 @@ const addJob = async (req, res, next) => {
 const getJob = async (req, res, next) => {
   try {
     const jobs = await Job.find({ userId: req.user.userId });
-    res.status(200).json({ data: jobs });
+    res.status(200).json({ success: true, data: jobs, message: "data found" });
   } catch (err) {
     next(err);
   }
@@ -79,7 +79,9 @@ const filterJobs = async (req, res, next) => {
 const deleteJobByAdmin = async (req, res, next) => {
   try {
     const deleteOp = await Job.findOneAndDelete({ _id: req.params.id });
-    res.status(200).json({ message: "deleted successfully", data: deleteOp });
+    res
+      .status(200)
+      .json({ success: true, message: "deleted successfully", data: deleteOp });
   } catch (err) {
     next();
   }
