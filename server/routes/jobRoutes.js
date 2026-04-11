@@ -14,6 +14,8 @@ const {
   deleteJobByAdmin,
 } = require("../controllers/jobController");
 
+router.use(logger);
+
 router.post(
   "/add",
   auth,
