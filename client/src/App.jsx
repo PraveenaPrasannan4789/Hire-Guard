@@ -6,10 +6,10 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 import HomePage from "./pages/HomePage";
-import SignupForm from "./components/auth/Signup";
+import SignupForm from "./pages/SignUp";
 
 import PrivateRoute from "./components/auth/PrivateRoute";
-import UserLogin from "./pages/Login";
+import Login from "./pages/Login";
 import DashBoard from "./pages/Dashboard";
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
               isUserLoggedIn ? (
                 <Navigate to="/dashboard" />
               ) : (
-                <UserLogin onLogin={onLogin} />
+                <Login onLogin={onLogin} />
               )
             }
           ></Route>
