@@ -5,15 +5,9 @@ const Header = () => {
     <header className="navbar">
       <div className="logo">HireGuard</div>
       <nav className="nav-links">
-        <a href="#" className="nav">
-          About Us
-        </a>
-        <a href="#" className="nav">
-          Login
-        </a>
-        <a href="#" className="nav">
-          Signup
-        </a>
+        <a href="#">About Us</a>
+        <a href="#">Login</a>
+        <a href="#">Signup</a>
       </nav>
     </header>
   );
