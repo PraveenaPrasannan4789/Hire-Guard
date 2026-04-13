@@ -7,9 +7,9 @@ const MainContent = () => {
           Manage your job applications and track <br /> every stage of your
           career journey in one place
         </h1>
-        <p1 className="sub-intro">
+        <p className="sub-intro">
           Take control of your job search with smart tracking and insights
-        </p1>
+        </p>
         <div className="card">
           <img
             src="https://i.pravatar.cc/80?img=12"
