@@ -1,4 +1,5 @@
 import UserSignUp from "../components/auth/UserSignUp";
+import "../styles/signup.css";
 
 const Login = ({ onSignup }) => {
   return (
