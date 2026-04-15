@@ -13,9 +13,17 @@ const jobRoute = require("./routes/jobRoutes");
 const app = express();
 
 // Middleware
-app.use(cors());
 app.use(helmet());
 app.use(express.json());
+
+const allowedOrigin = process.env.CLIENT_URL;
+
+app.use(
+  cors({
+    origin: allowedOrigin,
+    credentials: true,
+  }),
+);
 
 mongoose
   .connect(process.env.MONGO_URI)
