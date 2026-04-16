@@ -1,21 +1,26 @@
+import { useNavigate } from "react-router-dom";
+
 import "../../styles/managejob.css";
 import img from "../../assets/dashboard.png";
 
 const ManageJob = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="main-section">
+      <div className="manage-section">
         {/* left section */}
         <div className="left">
-          <h1 className="main-heading">
+          <h1 className="manage-heading">
             {" "}
             Manage Your Job Applications Effortlessly
           </h1>
-          <p className="main-paragraph">
+          <p className="manage-paragraph">
             Track, organize, and land your dream job faster with smart insights.
           </p>
           <div className="btn-group">
-            <button className="primary-btn">Get Started</button>
+            <button className="primary-btn" onClick={() => navigate("/login")}>
+              Get Started
+            </button>
             <button className="secondary-btn">View Demo</button>
           </div>
         </div>

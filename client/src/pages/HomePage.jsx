@@ -1,6 +1,6 @@
 import Header from "../components/home/Header";
 import Footer from "../components/home/Footer";
-import MainContent from "../components/home/MainContent";
+import MainContent from "../components/home/MainPage";
 import "../styles/homePage.css";
 
 const HomePage = () => {
