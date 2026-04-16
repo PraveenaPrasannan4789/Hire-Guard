@@ -1,12 +1,12 @@
 body {
   margin: 0;
+  padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(258deg, #99d3b8, #82938a00);
+  background: linear-gradient(258deg, #005996, #82938a00);
 }
 
 .container {
   min-height: 100vh;
-  padding: 20px;
   display: flex;
   flex-direction: column;
 }
