@@ -11,6 +11,7 @@ import SignupForm from "./pages/SignUp";
 import PrivateRoute from "./components/auth/PrivateRoute";
 import Login from "./pages/Login";
 import DashBoard from "./pages/Dashboard";
+import About from "./pages/AboutPage";
 
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -32,6 +33,7 @@ function App() {
         <Routes>
           {/* Redirect to dashboard if already logged in */}
           <Route path="/" element={<HomePage />}></Route>
+          <Route path="/about" element={<About />}></Route>
           <Route
             path="/login"
             element={
