@@ -5,6 +5,15 @@ const Login = ({ onSignup }) => {
   return (
     <div className="login">
       <div className="left">
+        <div className="bg-circle one"></div>
+        <div className="bg-circle two"></div>
+
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+          alt="signup"
+          className="hero-image"
+        />
+
         <h1>Create your account 🚀</h1>
 
         <p>
