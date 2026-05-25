@@ -6,39 +6,56 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* LEFT PANEL (Branding) */
+/* LEFT PANEL BACKGROUND */
 .left {
-  flex: 1;
-  /* background: linear-gradient(135deg, #0f172a, #1e293b); */
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
 }
 
-.left h1 {
-  font-size: 44px;
-  margin-bottom: 15px;
-  font-weight: 700;
+/* Floating image */
+.hero-image {
+  width: 180px;
+  margin-bottom: 30px;
+  animation: float 4s ease-in-out infinite;
+  z-index: 2;
 }
 
-.left p {
-  font-size: 18px;
-  opacity: 0.85;
-  line-height: 1.6;
-  max-width: 420px;
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-/* Small highlight box */
-.left .highlight {
-  margin-top: 25px;
-  padding: 15px 20px;
-  background: rgba(255, 255, 255, 0.08);
-  border-left: 4px solid #6366f1;
-  border-radius: 8px;
-  font-size: 14px;
-  max-width: 420px;
+/* Background circles */
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.18);
+  filter: blur(10px);
+}
+
+.bg-circle.one {
+  width: 260px;
+  height: 260px;
+  top: -80px;
+  right: -60px;
+}
+
+.bg-circle.two {
+  width: 180px;
+  height: 180px;
+  bottom: -40px;
+  left: -40px;
 }
 
 /* RIGHT PANEL */
