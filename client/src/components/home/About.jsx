@@ -78,7 +78,35 @@ const About = () => {
           and successful in their career journey.
         </p>
       </section>
+      {/* FAQ */}
+      <section className="about-faq">
+        <h2>Frequently Asked Questions</h2>
 
+        <div className="faq-container">
+          {faqs.map((faq, index) => (
+            <div
+              className={`faq-item ${activeIndex === index ? "active" : ""}`}
+              key={index}
+            >
+              <button
+                className="faq-question"
+                onClick={() =>
+                  setActiveIndex(activeIndex === index ? null : index)
+                }
+              >
+                {faq.question}
+                <span>{activeIndex === index ? "−" : "+"}</span>
+              </button>
+
+              {activeIndex === index && (
+                <div className="faq-answer">
+                  <p>{faq.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
       {/* CTA */}
       <section className="about-cta">
         <h2>Start Your Journey Today</h2>
