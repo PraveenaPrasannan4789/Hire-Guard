@@ -3,24 +3,24 @@ import "../../styles/landjob.css";
 const Landjob = () => {
   return (
     <>
-      <section className="hero-banner">
+      <section className="landjob-banner">
         {/* Small Badge */}
-        <div className="hero-badge">✨ Your career, organized</div>
+        <div className="landjob-badge">✨ Your career, organized</div>
 
         {/* Heading */}
-        <h1 className="hero-title">
+        <h1 className="landjob-title">
           Land your next job <br />
           faster with <span>HireGuard</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="hero-subtitle">
+        <p className="landjob-subtitle">
           Personalized AI tools, track and manage your job applications, and
           more.
         </p>
 
         {/* Users + Ratings */}
-        <div className="hero-social-proof">
+        <div className="landjob-social-proof">
           {/* Avatars */}
           <div className="avatar-group">
             <img src="https://i.pravatar.cc/100?img=1" alt="user" />
@@ -41,7 +41,7 @@ const Landjob = () => {
         </div>
 
         {/* Buttons */}
-        <div className="hero-buttons">
+        <div className="landjob-buttons">
           <button className="primary-btn">Sign up for free →</button>
 
           <button className="secondary-btn">Learn more</button>
