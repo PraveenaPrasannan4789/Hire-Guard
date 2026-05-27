@@ -14,7 +14,7 @@
 /* Badge */
 .landjob-badge {
   background: #e7f7ee;
-  color: #15803d;
+  color: #091b36;
   padding: 10px 20px;
   border-radius: 999px;
   font-size: 14px;
@@ -32,14 +32,14 @@
 }
 
 .landjob-title span {
-  color: #16a34a;
+  color: #4f7bad;
 }
 
 /* Subtitle */
 .landjob-subtitle {
   margin-top: 25px;
   font-size: 18px;
-  color: #475569;
+  color: #6e9acd;
   max-width: 700px;
   line-height: 1.6;
 }
@@ -102,7 +102,7 @@
 }
 
 .primary-btn {
-  background: #16a34a;
+  background: #7977cb;
   color: white;
   border: none;
   padding: 16px 34px;
@@ -110,22 +110,22 @@
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
+  pointer-events: auto;
   transition: 0.3s;
-  box-shadow: 0 10px 30px rgba(22, 163, 74, 0.25);
-}
-
-.primary-btn:hover {
-  transform: translateY(-3px);
-  background: #15803d;
 }
 
 .secondary-btn {
   background: transparent;
   border: none;
   font-size: 18px;
-  color: #166534;
+  color: #7889b1;
   text-decoration: underline;
   cursor: pointer;
+  pointer-events: auto;
+}
+.primary-btn:hover {
+  transform: translateY(-3px);
+  background: #15803d;
 }
 
 /* Tablet */

@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "../../styles/landjob.css";
 
 const Landjob = () => {
+  const navigate = useNavigate();
   return (
     <>
       <section className="landjob-banner">
@@ -42,9 +44,13 @@ const Landjob = () => {
 
         {/* Buttons */}
         <div className="landjob-buttons">
-          <button className="primary-btn">Sign up for free →</button>
+          <button onClick={() => navigate("/signup")} className="primary-btn">
+            Sign up for free →
+          </button>
 
-          <button className="secondary-btn">Learn more</button>
+          <button onClick={() => navigate("/about")} className="secondary-btn">
+            Learn more
+          </button>
         </div>
       </section>
     </>
