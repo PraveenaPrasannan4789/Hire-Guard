@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import "../../styles/usersignup.css";
+
 const Signup = ({ onSignup }) => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [errors, setErrors] = useState({});
@@ -58,47 +60,64 @@ const Signup = ({ onSignup }) => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-          />
-          {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
-        </div>
-        <div>
-          <label>Email</label>
-          <input
-            type="text"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-          />
-          {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
-        </div>
-        <div>
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-          />
-          {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
-        </div>
-        <button type="submit">SignUp</button>
-        {errors.general && <p style={{ color: "red" }}>{errors.general}</p>}
-      </form>
-      <div style={{ margin: "20px" }}>
-        <button type="button" onClick={() => handlelogOut()}>
-          Go Back
+    <div className="signup-page">
+      <div className="signup-card">
+        <h1>Create Account</h1>
+        <p className="signup-subtitle">
+          Start tracking your job applications today.
+        </p>
+
+        <form onSubmit={handleSubmit} className="signup-form">
+          <div className="form-group">
+            <label>Name</label>
+            <input
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+            />
+            {errors.name && <p className="error">{errors.name}</p>}
+          </div>
+
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+            />
+            {errors.email && <p className="error">{errors.email}</p>}
+          </div>
+
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              value={form.password}
+              onChange={handleChange}
+              placeholder="Create a password"
+            />
+            {errors.password && <p className="error">{errors.password}</p>}
+          </div>
+
+          {errors.general && (
+            <p className="error general-error">{errors.general}</p>
+          )}
+
+          <button type="submit" className="signup-btn">
+            Create Account
+          </button>
+        </form>
+
+        <button type="button" className="back-btn" onClick={handlelogOut}>
+          ← Go Back
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
