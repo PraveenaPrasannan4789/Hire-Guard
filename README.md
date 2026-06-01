@@ -11,3 +11,9 @@ This is a full-stack **MERN (MongoDB, Express, React, Node.js)** Task Manager ap
 - Backend REST APIs with Express & MongoDB
 - Middleware for authentication & error handling
 - Optional: search tasks, filter (completed/pending), dark mode
+
+Tech Stack
+Frontend: React.js
+Backend: Node.js, Express.js
+Database: MongoDB
+Authentication: JSON Web Token (JWT)
