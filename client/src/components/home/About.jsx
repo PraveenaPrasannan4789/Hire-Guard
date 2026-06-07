@@ -49,11 +49,33 @@ const About = () => {
 
       {/* Mission */}
       <section className="about-mission">
-        <h2>Our Mission</h2>
-        <p>
-          To simplify job hunting and help candidates stay organized, confident,
-          and successful in their career journey.
-        </p>
+        <h2 className="mission-title">Our Mission</h2>
+
+        <div className="mission-boxes">
+          <div className="mission-box">
+            🚀
+            <h4>Faster Applications</h4>
+            <p>Apply to jobs in just a few clicks with an optimized flow.</p>
+          </div>
+
+          <div className="mission-box">
+            🎯
+            <h4>Smart Matching</h4>
+            <p>Get job recommendations based on your skills and profile.</p>
+          </div>
+
+          <div className="mission-box">
+            🔐
+            <h4>Secure Platform</h4>
+            <p>Your data is protected with enterprise-grade security.</p>
+          </div>
+
+          <div className="mission-box">
+            📊
+            <h4>Track Progress</h4>
+            <p>Monitor all your applications in one clean dashboard.</p>
+          </div>
+        </div>
       </section>
       <Faq />
       {/* CTA */}
