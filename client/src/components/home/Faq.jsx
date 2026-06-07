@@ -27,42 +27,36 @@ const Faq = () => {
     },
   ];
 
+  const toggleFaq = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
-    <>
-      {/* FAQ */}
-      <section className="about-faq">
-        <h2>Frequently Asked Questions</h2>
+    <section className="about-faq">
+      <h2>Frequently Asked Questions</h2>
 
-        <div className="faq-container">
-          {faqs.map((faq, index) => (
-            <div
-              className={`faq-item ${activeIndex === index ? "active" : ""}`}
-              key={index}
-            >
-              <button
-                className="faq-question"
-                onClick={() =>
-                  setActiveIndex(activeIndex === index ? null : index)
-                }
-              >
-                <span>{faq.question}</span>
+      <div className="faq-container">
+        {faqs.map((faq, index) => (
+          <div
+            className={`faq-item ${activeIndex === index ? "active" : ""}`}
+            key={index}
+          >
+            <button className="faq-question" onClick={() => toggleFaq(index)}>
+              {faq.question}
+              <span className="faq-icon">
+                {activeIndex === index ? "−" : "+"}
+              </span>
+            </button>
 
-                <span className="faq-icon">
-                  {activeIndex === index ? "−" : "+"}
-                </span>
-              </button>
-
-              {/* Only answer opens */}
-              <div
-                className={`faq-answer ${activeIndex === index ? "show" : ""}`}
-              >
+            {activeIndex === index && (
+              <div className="faq-answer">
                 <p>{faq.answer}</p>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
