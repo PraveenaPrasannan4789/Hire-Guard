@@ -12,6 +12,7 @@
 .logo {
   font-weight: bold;
   letter-spacing: 2px;
+  text-decoration: none;
 }
 
 .nav-links a {

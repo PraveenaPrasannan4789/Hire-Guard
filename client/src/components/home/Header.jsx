@@ -4,7 +4,12 @@ import "../../styles/header.css";
 const Header = () => {
   return (
     <header className="navbar">
-      <div className="logo">HireGuard</div>
+      <div>
+        <Link className="logo" to="/">
+          HireGuard
+        </Link>
+      </div>
+
       <nav className="nav-links">
         <Link to="/about">About Us</Link>
         <Link to="/login">Login</Link>
