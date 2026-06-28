@@ -26,7 +26,7 @@ const ManageJob = () => {
         </div>
 
         <div className="right">
-          <div className="card">
+          <div className="manage-card">
             {/* right section */}
             <img className="card-img" src={img} alt="img"></img>
           </div>
