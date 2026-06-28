@@ -1,100 +1,86 @@
 .manage-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 70vh;
+
   display: flex;
-  min-height: 60vh;
-  height: auto;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 80px;
-  gap: 40px;
+  gap: 60px;
+
+  padding: 80px 32px;
 }
 
-/* LEFT SIDE */
+/* LEFT */
 .left {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 20px;
+  align-items: flex-start;
 }
 
 .manage-heading {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3.5rem);
   line-height: 1.2;
-  color: #111;
-  max-width: 500px;
+  margin-bottom: 20px;
+  max-width: 550px;
 }
 
 .manage-paragraph {
-  font-size: 18px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   color: #555;
-  max-width: 450px;
+  max-width: 500px;
+  margin-bottom: 30px;
 }
 
-/* BUTTONS */
 .btn-group {
   display: flex;
-  gap: 15px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.primary-btn {
-  padding: 10px 18px;
-  background: #0f766e;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
+.primary-btn,
 .secondary-btn {
-  padding: 10px 18px;
-  background: transparent;
-  border: 1px solid #0f766e;
-  color: #0f766e;
-  border-radius: 8px;
+  padding: 14px 28px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-/* RIGHT SIDE */
+/* RIGHT */
 .right {
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
-.card {
+.manage-card {
   width: 100%;
-  max-width: 500px;
-  border-radius: 16px;
+  max-width: 550px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  background: white;
 }
 
 .card-img {
   width: 100%;
-  height: auto;
   display: block;
-  object-fit: cover;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .manage-section {
     flex-direction: column;
-    height: auto;
-    padding: 30px 20px;
     text-align: center;
   }
 
   .left {
     align-items: center;
   }
+}
 
-  .manage-heading {
-    font-size: 32px;
+@media (max-width: 576px) {
+  .manage-section {
+    padding: 50px 20px;
   }
 
   .btn-group {
