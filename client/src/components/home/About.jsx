@@ -31,7 +31,7 @@ const About = () => {
 
         <div className="feature-grid">
           <div className="feature-box">
-            <h3>📊 Tracking</h3>
+            <h3>Tracking</h3>
             <p>Track all your job applications easily.</p>
           </div>
 
@@ -41,7 +41,7 @@ const About = () => {
           </div>
 
           <div className="feature-box">
-            <h3>📈 Insights</h3>
+            <h3>Insights</h3>
             <p>Understand your job search progress.</p>
           </div>
         </div>
@@ -53,25 +53,21 @@ const About = () => {
 
         <div className="mission-boxes">
           <div className="mission-box">
-            🚀
             <h4>Faster Applications</h4>
             <p>Apply to jobs in just a few clicks with an optimized flow.</p>
           </div>
 
           <div className="mission-box">
-            🎯
             <h4>Smart Matching</h4>
             <p>Get job recommendations based on your skills and profile.</p>
           </div>
 
           <div className="mission-box">
-            🔐
             <h4>Secure Platform</h4>
             <p>Your data is protected with enterprise-grade security.</p>
           </div>
 
           <div className="mission-box">
-            📊
             <h4>Track Progress</h4>
             <p>Monitor all your applications in one clean dashboard.</p>
           </div>

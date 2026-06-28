@@ -26,7 +26,7 @@ const Login = ({ onSignup }) => {
           security.
         </div>
       </div>
-      <div className="right">
+      <div className="right-signup">
         <div className="right-box">
           {" "}
           <UserSignUp onSignup={onSignup} />
