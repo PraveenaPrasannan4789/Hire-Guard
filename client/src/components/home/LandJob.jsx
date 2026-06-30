@@ -27,7 +27,6 @@ const Landjob = () => {
           <div className="avatar-group">
             <img src="https://i.pravatar.cc/100?img=1" alt="user" />
             <img src="https://i.pravatar.cc/100?img=3" alt="user" />
-            <img src="https://i.pravatar.cc/100?img=4" alt="user" />
             <img src="https://i.pravatar.cc/100?img=5" alt="user" />
           </div>
 
