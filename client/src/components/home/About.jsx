@@ -7,73 +7,101 @@ const About = () => {
 
   return (
     <div className="about-wrapper">
-      {/* Hero */}
+      {/* HERO */}
       <section className="about-hero">
-        <h1>About HireGuard</h1>
-        <p>
-          Your smart job application tracker to manage interviews, applications,
-          and career progress in one place.
-        </p>
+        <div className="hero-content">
+          <h1>About HireGuard</h1>
+          <p>
+            A smart job application tracker that helps you manage applications,
+            interviews, and career progress in one clean dashboard.
+          </p>
+
+          <button onClick={() => navigate("/login")}>Get Started</button>
+        </div>
+
+        <div className="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+            alt="career"
+          />
+        </div>
       </section>
 
-      {/* What is HireGuard */}
+      {/* WHAT IS */}
       <section className="about-card">
-        <h2>What is HireGuard?</h2>
-        <p>
-          HireGuard helps job seekers stay organized by tracking applications,
-          interview stages, and progress analytics — all in a simple dashboard.
-        </p>
+        <div className="card-image">
+          <img
+            src="https://images.unsplash.com/photo-1553877522-43269d4ea984"
+            alt="dashboard"
+          />
+        </div>
+
+        <div className="card-content">
+          <h2>What is HireGuard?</h2>
+          <p>
+            HireGuard helps job seekers track applications, interviews, and
+            progress analytics in a simple and powerful dashboard.
+          </p>
+        </div>
       </section>
 
-      {/* Features */}
+      {/* FEATURES */}
       <section className="about-features">
         <h2>Why Choose HireGuard?</h2>
 
         <div className="feature-grid">
           <div className="feature-box">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f" />
             <h3>Tracking</h3>
-            <p>Track all your job applications easily.</p>
+            <p>Manage all job applications easily.</p>
           </div>
 
           <div className="feature-box">
-            <h3>🗓 Scheduling</h3>
+            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe" />
+            <h3>Scheduling</h3>
             <p>Never miss interviews or deadlines.</p>
           </div>
 
           <div className="feature-box">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" />
             <h3>Insights</h3>
             <p>Understand your job search progress.</p>
           </div>
         </div>
       </section>
 
-      {/* Mission */}
+      {/* MISSION */}
       <section className="about-mission">
-        <h2 className="mission-title">Our Mission</h2>
+        <h2>Our Mission</h2>
 
-        <div className="mission-boxes">
+        <div className="mission-grid">
           <div className="mission-box">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" />
             <h4>Faster Applications</h4>
-            <p>Apply to jobs in just a few clicks with an optimized flow.</p>
+            <p>Apply in seconds with smart workflow.</p>
           </div>
 
           <div className="mission-box">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" />
             <h4>Smart Matching</h4>
-            <p>Get job recommendations based on your skills and profile.</p>
+            <p>Find jobs that match your profile.</p>
           </div>
 
           <div className="mission-box">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" />
             <h4>Secure Platform</h4>
-            <p>Your data is protected with enterprise-grade security.</p>
+            <p>Your data is always protected.</p>
           </div>
 
           <div className="mission-box">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72" />
             <h4>Track Progress</h4>
-            <p>Monitor all your applications in one clean dashboard.</p>
+            <p>Monitor everything in one place.</p>
           </div>
         </div>
       </section>
       <Faq />
+
       {/* CTA */}
       <section className="about-cta">
         <h2>Start Your Journey Today</h2>
