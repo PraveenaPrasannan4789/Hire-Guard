@@ -35,14 +35,18 @@ const About = () => {
       {/* WHAT IS */}
       <section className="about-card">
         <div className="card-image">
-          <img
-            src="https://images.unsplash.com/photo-1553877522-43269d4ea984"
-            alt="dashboard"
-          />
+          <div className="card-image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984"
+              alt="dashboard"
+            />
+          </div>
         </div>
-
         <div className="card-content">
-          <h2>What is HireGuard?</h2>
+          <h2>
+            What is <span>HireGuard?</span>
+          </h2>
+
           <p>
             HireGuard helps job seekers track applications, interviews, and
             progress analytics in a simple and powerful dashboard.
