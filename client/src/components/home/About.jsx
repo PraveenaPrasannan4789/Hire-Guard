@@ -10,7 +10,10 @@ const About = () => {
       {/* HERO */}
       <section className="about-hero">
         <div className="hero-content">
-          <h1>About HireGuard</h1>
+          <h1>
+            About <span>HireGuard</span>
+          </h1>
+
           <p>
             A smart job application tracker that helps you manage applications,
             interviews, and career progress in one clean dashboard.
@@ -20,10 +23,12 @@ const About = () => {
         </div>
 
         <div className="hero-image">
-          <img
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-            alt="career"
-          />
+          <div className="image-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+              alt="career"
+            />
+          </div>
         </div>
       </section>
 
