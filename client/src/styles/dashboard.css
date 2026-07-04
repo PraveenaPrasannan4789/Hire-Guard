@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  background: #3f7a74;
   color: white;
   padding: 25px 30px;
   border-radius: 16px;
@@ -35,7 +35,7 @@
 /* Logout button */
 .logout-btn {
   background: white;
-  color: #4f46e5;
+  color: linear-gradient(258deg, #005996, #82938a00);
   border: none;
   padding: 10px 16px;
   border-radius: 10px;
