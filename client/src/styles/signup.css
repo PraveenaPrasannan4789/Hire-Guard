@@ -1,132 +1,56 @@
-/* Page Layout */
-.login {
+.login-page {
   display: flex;
-  width: 100%;
   height: 100vh;
   font-family: "Segoe UI", sans-serif;
 }
 
-/* LEFT PANEL BACKGROUND */
-.left {
+/* LEFT SIDE */
+.left-panel {
+  flex: 1;
   position: relative;
+  background: linear-gradient(258deg, #005996, #82938a00);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  /* background: linear-gradient(135deg, #0f172a, #1e293b); */
 }
 
-/* Floating image */
-.hero-image {
-  width: 180px;
-  margin-bottom: 30px;
-  animation: float 4s ease-in-out infinite;
+/* dark overlay for depth */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.left-content {
+  position: relative;
+  max-width: 400px;
   z-index: 2;
 }
 
-/* Floating animation */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
+.left-content h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
 }
 
-/* Background circles */
-.bg-circle {
-  position: absolute;
-  border-radius: 50%;
-  /* background: rgba(99, 102, 241, 0.18); */
-  filter: blur(10px);
+.left-content p {
+  opacity: 0.9;
+  margin-bottom: 25px;
+  line-height: 1.5;
 }
 
-.bg-circle.one {
-  width: 260px;
-  height: 260px;
-  top: -80px;
-  right: -60px;
+.features div {
+  margin: 12px 0;
+  font-size: 15px;
+  opacity: 0.95;
 }
 
-.bg-circle.two {
-  width: 180px;
-  height: 180px;
-  bottom: -40px;
-  left: -40px;
-}
-
-/* RIGHT PANEL */
-.right-signup {
+/* RIGHT SIDE */
+.right-panel {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f4f6f9;
-}
-
-/* FORM CARD */
-.right-box {
-  background: white;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-/* Form */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-/* Labels */
-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #374151;
-}
-
-/* Inputs */
-input {
-  padding: 12px 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  outline: none;
-  font-size: 14px;
-  transition: 0.2s;
-}
-
-input:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
-}
-
-/* Button */
-button {
-  background: #202040;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #191658;
-}
-
-/* Error */
-p {
-  font-size: 12px;
-  margin: 4px 0 0;
-}
-
-p[style*="color: red"] {
-  color: #ef4444 !important;
+  background: #f6f9fc;
 }
