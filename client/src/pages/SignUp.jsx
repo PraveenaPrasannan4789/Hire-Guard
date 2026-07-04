@@ -3,34 +3,28 @@ import "../styles/signup.css";
 
 const Login = ({ onSignup }) => {
   return (
-    <div className="login">
-      <div className="left">
-        <div className="bg-circle one"></div>
-        <div className="bg-circle two"></div>
+    <div className="login-page">
+      {/* LEFT SIDE */}
+      <div className="left-panel">
+        <div className="overlay" />
 
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-          alt="signup"
-          className="hero-image"
-        />
+        <div className="left-content">
+          <h1>Create your account</h1>
+          <p>
+            Manage your tasks, track applications, and collaborate efficiently.
+          </p>
 
-        <h1>Create your account 🚀</h1>
-
-        <p>
-          Join our platform to manage tasks, track progress, and collaborate
-          efficiently with your team.
-        </p>
-
-        <div className="highlight">
-          💡 Tip: Use a strong password with at least 6 characters for better
-          security.
+          <div className="features">
+            <div>✔ Organize everything in one place</div>
+            <div>✔ Work seamlessly with your team</div>
+            <div>✔ Track progress in real time</div>
+          </div>
         </div>
       </div>
-      <div className="right-signup">
-        <div className="right-box">
-          {" "}
-          <UserSignUp onSignup={onSignup} />
-        </div>
+
+      {/* RIGHT SIDE */}
+      <div className="right-panel">
+        <UserSignUp onSignup={onSignup} />
       </div>
     </div>
   );

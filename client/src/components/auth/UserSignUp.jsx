@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import "../../styles/usersignup.css";
 
-const Signup = ({ onSignup }) => {
+const UserSignUp = ({ onSignup }) => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
@@ -11,114 +10,83 @@ const Signup = ({ onSignup }) => {
   const API_URL = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e) => {
-    let validationErrors = {};
     e.preventDefault();
-    if (!form.name) {
-      validationErrors.name = "name is required";
-    }
-    if (!form.email) {
-      validationErrors.email = "email is required";
-    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      validationErrors.email = "invalid email";
-    }
 
-    if (!form.password) validationErrors.password = "Password is required";
-    else if (form.password.length < 6)
-      validationErrors.password = "Password must be 6+ chars";
+    let validationErrors = {};
+    if (!form.name) validationErrors.name = "Name is required";
+    if (!form.email) validationErrors.email = "Email is required";
+    if (!form.password || form.password.length < 6)
+      validationErrors.password = "Min 6 characters required";
 
-    if (Object.keys(validationErrors).length > 0) {
+    if (Object.keys(validationErrors).length) {
       setErrors(validationErrors);
       return;
     }
+
     try {
       const res = await fetch(`${API_URL}/api/auth/signup`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...form }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
       });
+
       const data = await res.json();
+
       if (data.success) {
         onSignup(form);
         navigate("/dashboard");
       } else {
-        setErrors({ general: data.message || "SignUp failed" });
+        setErrors({ general: data.message || "Signup failed" });
       }
     } catch (err) {
-      setErrors({ general: data.message || "Network Error" });
+      setErrors({ general: "Network error" });
     }
   };
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handlelogOut = () => {
-    console.log("am here");
-    navigate("/");
+  const handleBack = () => {
+    navigate(-1); // goes back to previous page
+    // OR use: navigate("/") if you want fixed route
   };
 
   return (
-    <div className="signup-page">
-      <div className="signup-card">
-        <h1>Create Account</h1>
-        <p className="signup-subtitle">
-          Start tracking your job applications today.
-        </p>
+    <div className="signup-card">
+      <h2>Create Account</h2>
+      <p className="subtitle">Start your journey with us</p>
 
-        <form onSubmit={handleSubmit} className="signup-form">
-          <div className="form-group">
-            <label>Name</label>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="Enter your name"
-            />
-            {errors.name && <p className="error">{errors.name}</p>}
-          </div>
+      <form onSubmit={handleSubmit} className="signup-form">
+        <input
+          name="name"
+          placeholder="Full name"
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
+        />
+        {errors.name && <p className="error">{errors.name}</p>}
 
-          <div className="form-group">
-            <label>Email</label>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-            />
-            {errors.email && <p className="error">{errors.email}</p>}
-          </div>
+        <input
+          name="email"
+          placeholder="Email address"
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
+        />
+        {errors.email && <p className="error">{errors.email}</p>}
 
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-              placeholder="Create a password"
-            />
-            {errors.password && <p className="error">{errors.password}</p>}
-          </div>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          onChange={(e) => setForm({ ...form, password: e.target.value })}
+        />
+        {errors.password && <p className="error">{errors.password}</p>}
 
-          {errors.general && (
-            <p className="error general-error">{errors.general}</p>
-          )}
+        {errors.general && <p className="error">{errors.general}</p>}
 
-          <button type="submit" className="signup-btn">
-            Create Account
-          </button>
-        </form>
+        <button type="submit">Create Account</button>
+      </form>
 
-        <button type="button" className="back-btn" onClick={handlelogOut}>
-          ← Go Back
-        </button>
-      </div>
+      {/* BACK BUTTON */}
+      <button type="button" className="back-btn" onClick={handleBack}>
+        ← Go Back
+      </button>
     </div>
   );
 };
 
-export default Signup;
+export default UserSignUp;
