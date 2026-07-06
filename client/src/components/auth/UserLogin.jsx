@@ -9,6 +9,11 @@ const UserLogin = ({ onLogin }) => {
 
   const API_URI = import.meta.env.VITE_API_URL;
 
+  const handleBack = () => {
+    navigate(-1); // goes back to previous page
+    // OR use: navigate("/") if you want fixed route
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     let errors = {};
@@ -88,6 +93,10 @@ const UserLogin = ({ onLogin }) => {
           for signup
         </p>
       </div>
+      {/* BACK BUTTON */}
+      <button type="button" className="back-btn" onClick={handleBack}>
+        ← Go Back
+      </button>
     </div>
   );
 };

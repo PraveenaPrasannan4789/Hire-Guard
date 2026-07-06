@@ -7,7 +7,7 @@ const Login = ({ onLogin }) => {
       {/* LEFT SIDE */}
       <div className="left">
         <div className="left-content">
-          <h1>Welcome Back 👋</h1>
+          <h1>Welcome Back</h1>
 
           <p>
             Sign in to manage your job applications, track interviews, and
@@ -16,7 +16,7 @@ const Login = ({ onLogin }) => {
 
           {/* Trust Badge */}
           <div className="highlight">
-            🔒 Your data is secure with enterprise-grade encryption
+            Your data is secure with enterprise-grade encryption
           </div>
 
           {/* Reviews */}
