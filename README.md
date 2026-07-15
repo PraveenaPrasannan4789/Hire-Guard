@@ -1,33 +1,34 @@
 # MERN Task Manager
 
-## 🚀 Live Demo
-
-- Frontend (Vercel): [https://your-project.vercel.app](https://hire-guard-mu.vercel.app/)
-- Backend (Render): https://your-backend.onrender.com](https://hire-guard-4dg5.onrender.com/)
-
-This is a full-stack **MERN (MongoDB, Express, React, Node.js)** Task Manager application with authentication, CRUD functionality, and REST API backend.
+A full-stack Task Manager application built using the **MERN stack (MongoDB, Express.js, React, and Node.js)**. The application enables users to securely manage their daily tasks through a responsive interface and RESTful backend services.
 
 ## Features
-- User signup & login (authentication with JWT)
-- Create, edit, delete tasks
-- Mark tasks as completed
-- Form validation
-- API integration
-- Backend REST APIs with Express & MongoDB
-- Middleware for authentication & error handling
-- Optional: search tasks, filter (completed/pending), dark mode
 
-Tech Stack
-Frontend: React.js
-Backend: Node.js, Express.js
-Database: MongoDB
-Authentication: JSON Web Token (JWT)
+- Secure user registration and login using JWT-based authentication
+- Create, view, update, and delete tasks (CRUD operations)
+- Mark tasks as completed or pending
+- Input validation on both the client and server
+- RESTful API built with Express.js
+- MongoDB database integration with Mongoose
+- Authentication and centralized error-handling middleware
+- Responsive React frontend with API integration
+- Optional enhancements:
+  - Search tasks by title or keyword
+  - Filter tasks by status (Completed/Pending)
+  - Dark mode support
 
-##  Deployment
+## Tech Stack
 
-- Frontend deployed using Vercel (CI/CD enabled)
-- Backend deployed using Render
-- Environment variables managed securely via platform dashboard
-- CORS configured for production and development environments
+- **Frontend:** React, JavaScript, CSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB, Mongoose
+- **Authentication:** JSON Web Tokens (JWT)
+- **API Testing:** Postman
 
- Live App: [https://your-project.vercel.app](https://hire-guard-mu.vercel.app/)
+## Key Highlights
+
+- Implemented secure authentication and authorization using JWT.
+- Designed RESTful APIs following industry best practices.
+- Applied middleware for request validation, authentication, and error handling.
+- Built reusable React components for a responsive and maintainable user interface.
+- Managed application state and asynchronous API communication efficiently.
