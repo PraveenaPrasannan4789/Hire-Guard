@@ -1,82 +1,223 @@
-/* Main dashboard background */
+* {
+  box-sizing: border-box;
+}
+
 .dashboard {
-  padding: 30px;
-  font-family: "Segoe UI", sans-serif;
-  background: #f4f6f9;
   min-height: 100vh;
+  padding: 40px;
+  background: #f7f8fa;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #172033;
 }
 
-/* Header section */
+/* Header */
+
 .dashboard-header {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 32px 36px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
-  color: white;
-  padding: 25px 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  margin-bottom: 25px;
+  justify-content: space-between;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
 }
 
-/* Title */
+.dashboard-label,
+.section-label,
+.stat-label {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #6b7280;
+}
+
 .dashboard-header h1 {
   margin: 0;
-  font-size: 26px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+  color: #111827;
 }
 
-/* Subtitle */
 .dashboard-header p {
-  margin-top: 6px;
+  margin: 8px 0 0;
   font-size: 14px;
-  opacity: 0.9;
+  color: #6b7280;
 }
 
-/* Logout button */
+/* Logout */
+
 .logout-btn {
-  background: white;
-  color: linear-gradient(258deg, #005996, #82938a00);
-  border: none;
-  padding: 10px 16px;
-  border-radius: 10px;
+  padding: 10px 18px;
+
+  background: transparent;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  color: #374151;
+  font-size: 14px;
   font-weight: 600;
+
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.2s ease;
 }
 
 .logout-btn:hover {
-  background: #e0e7ff;
+  background: #f3f4f6;
+  border-color: #9ca3af;
 }
 
-/* Stats section */
+/* Statistics */
+
 .stats {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin-bottom: 25px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
-/* stat cards */
 .stat-card {
-  background: white;
-  padding: 18px;
+  padding: 24px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(17, 24, 39, 0.06);
 }
 
-.stat-card h3 {
-  margin: 0;
-  font-size: 16px;
+.stat-card .stat-label {
+  margin-bottom: 14px;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
   color: #111827;
 }
 
 .stat-card p {
-  margin-top: 6px;
+  margin: 5px 0 0;
+
   font-size: 13px;
   color: #6b7280;
+}
+
+/* Jobs section */
+
+.jobs-section {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 28px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: 21px;
+  font-weight: 650;
+  color: #111827;
+}
+
+.section-label {
+  margin-bottom: 6px;
+}
+
+/* Add job */
+
+.add-job-btn {
+  padding: 10px 16px;
+
+  background: #111827;
+  border: 1px solid #111827;
+  border-radius: 8px;
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-job-btn:hover {
+  background: #374151;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 20px;
+  }
+
+  .dashboard-header {
+    padding: 24px;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 26px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .jobs-section {
+    padding: 20px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard-header {
+    flex-direction: column;
+  }
+
+  .logout-btn {
+    width: 100%;
+  }
+
+  .section-heading {
+    flex-direction: column;
+  }
+
+  .add-job-btn {
+    width: 100%;
+  }
 }
