@@ -4,39 +4,50 @@ import "../styles/dashboard.css";
 const DashBoard = ({ handlelogOut }) => {
   return (
     <div className="dashboard">
-      <div className="dashboard-header">
+      <header className="dashboard-header">
         <div>
-          <h1>🚀 Job Tracker Dashboard</h1>
-          <p>
-            Track your applications, interviews, and career progress in one
-            place.
-          </p>
+          <span className="dashboard-label">JOB TRACKER</span>
+          <h1>My Applications</h1>
+          <p>Keep track of your job applications and interview progress.</p>
         </div>
 
         <button className="logout-btn" onClick={handlelogOut}>
-          Logout
+          Sign out
         </button>
-      </div>
+      </header>
 
-      {/* optional quick stats */}
-      <div className="stats">
+      <section className="stats">
         <div className="stat-card">
-          <h3>Applications</h3>
-          <p>📌 Track all jobs</p>
+          <span className="stat-label">APPLICATIONS</span>
+          <strong>0</strong>
+          <p>Total applications</p>
         </div>
 
         <div className="stat-card">
-          <h3>Interviews</h3>
-          <p>🎯 Opportunities</p>
+          <span className="stat-label">INTERVIEWS</span>
+          <strong>0</strong>
+          <p>Upcoming interviews</p>
         </div>
 
         <div className="stat-card">
-          <h3>Progress</h3>
-          <p>📊 Career growth</p>
+          <span className="stat-label">OFFERS</span>
+          <strong>0</strong>
+          <p>Offers received</p>
         </div>
-      </div>
+      </section>
 
-      <JobList />
+      <section className="jobs-section">
+        <div className="section-heading">
+          <div>
+            <span className="section-label">APPLICATIONS</span>
+            <h2>Recent applications</h2>
+          </div>
+
+          <button className="add-job-btn">Add application</button>
+        </div>
+
+        <JobList />
+      </section>
     </div>
   );
 };
