@@ -60,7 +60,7 @@ function JobList() {
 
   return (
     <div className="job-container">
-      <h2 className="title">📌 Your Job Applications</h2>
+      <h2 className="title">Your Job Applications</h2>
 
       {errors.general && <p className="error">{errors.general}</p>}
 
