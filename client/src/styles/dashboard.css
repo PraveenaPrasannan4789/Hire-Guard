@@ -49,7 +49,7 @@
   font-weight: 800;
   letter-spacing: 1.3px;
 
-  background: linear-gradient(90deg, #059669, #2563eb);
+  background: linear-gradient(90deg, #303878, #2563eb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -88,7 +88,7 @@
   color: #ffffff;
   border-color: transparent;
 
-  background: linear-gradient(135deg, #059669, #2563eb);
+  background: linear-gradient(90deg, #303878, #2563eb);
 
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
@@ -149,7 +149,7 @@
   font-size: 32px;
   font-weight: 750;
 
-  background: linear-gradient(135deg, #059669, #2563eb);
+  background: linear-gradient(90deg, #303878, #2563eb);
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
